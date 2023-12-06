@@ -24,7 +24,7 @@ public class ProductPage extends BasePage {
 
 
     @FindBy(css = "p:nth-last-of-type(2)")
-    public List<WebElement> Products;
+    public List<WebElement> ProductsTexts;
 
 
     @FindBy(xpath = "//*[contains(@onclick, 'addToCart')]")
