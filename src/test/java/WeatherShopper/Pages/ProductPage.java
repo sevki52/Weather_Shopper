@@ -49,6 +49,7 @@ public class ProductPage extends BasePage {
         BrowserUtils.waitFor(6);
     }
     public String getMoisturizerSelector(String productName) {
+        BrowserUtils.waitForPageToLoad(5);
         return "//p[contains(text(),'" + productName + "')]/ancestor::div[@class='container']";
     }
     public int compareProductPrices(WebElement product1, WebElement product2) {
