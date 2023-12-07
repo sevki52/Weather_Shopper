@@ -12,20 +12,14 @@ import java.util.stream.Collectors;
 
 public class ProductPage extends BasePage {
 
-    @FindBy(css = "Moisturizers")
-    public WebElement MoisturizersButton;
-
     @FindBy(css = "p.top-space-10")
     public List<WebElement> MoisturizerProducts;
-
 
     @FindBy(css = "p:nth-last-of-type(2)")
     public List<WebElement> ProductsTexts;
 
-
     @FindBy(xpath = "//*[contains(@onclick, 'addToCart')]")
     public WebElement AddtoCart;
-
 
 
 
