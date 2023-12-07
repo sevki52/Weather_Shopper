@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
     @CucumberOptions(
             plugin = {"json:target/cucumber.json",
-                    "html:target/default-html-reports",
+                    "html:target/cucumber-html-reports",
                     "rerun:target/rerun.txt"},
             features = "src/test/resources/Features",
             glue = "WeatherShopper/Steps_Definitions",
