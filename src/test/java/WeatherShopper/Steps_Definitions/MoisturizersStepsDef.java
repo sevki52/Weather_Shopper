@@ -34,8 +34,8 @@ ProductPage productPage = new ProductPage();
         int currentWeather = dashboardPage.getWeather();
 
     }
-    @Then("the user navigates to the moisturizers or sunscreens product page according to the temperature")
-    public void the_user_navigates_to_the_moisturizers_or_sunscreens_product_page_according_to_the_temperature() {
+    @Then("the user selects the products in the moisturizers or sunscreens product page according to the temperature")
+    public void the_user_selects_the_products_in_the_moisturizers_or_sunscreens_product_page_according_to_the_temperature() {
         // Check the weather conditions and shop accordingly
         int currentWeather = dashboardPage.getWeather();
         if (currentWeather < 19) {
@@ -51,7 +51,7 @@ ProductPage productPage = new ProductPage();
                 productPage.selectMoisturizer(leastExpensiveAloeMoisturizer);
             }
 
-// Select the least expensive moisturizer with Almond
+            // Select the least expensive moisturizer with Almond
             if (!almondMoisturizers.isEmpty()) {
                 WebElement leastExpensiveAlmondMoisturizer = almondMoisturizers.stream()
                         .min((product1, product2) -> productPage.compareProductPrices(product1, product2))
@@ -65,44 +65,7 @@ ProductPage productPage = new ProductPage();
             dashboardPage.suncreamButton.click();
             System.out.println(currentWeather);
         }
-    }
+    }}
 
 
 
-    @Then("the user selects the products and add them to the cart")
-    public void the_user_selects_the_products_and_add_them_to_the_cart() {
-        BrowserUtils.waitForPageToLoad(10);
-        List<WebElement> products = productPage.Products;
-        int numberOfProducts = products.size();
-
-        for (WebElement product : products) {
-            //System.out.println(product.getText());
-        }
-        List<String> selectionCriteriaList = Arrays.asList();
-
-        for (String selectionCriteria : selectionCriteriaList) {
-            String productSelector;
-
-            switch (selectionCriteria.trim().toLowerCase()) {
-                case "aloe":
-                    productSelector = "//p[contains(text(),'Aloe')]";
-                    break;
-                case "spf-30":
-                    productSelector = "//p[contains(translate(text(),'SPF-30', 'spf-30'))]";
-
-                    break;
-
-                default:
-                    throw new IllegalArgumentException("Invalid selection criteria: " + selectionCriteria);
-
-            }
-            selectionCriteriaList.add(productSelector);
-            BrowserUtils.waitFor(6);
-            productPage.AddtoCart.click();
-
-            System.out.println(selectionCriteria);
-
-        }
-        }
-
-}

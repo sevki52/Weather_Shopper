@@ -5,13 +5,9 @@ import WeatherShopper.Utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.openqa.selenium.WebDriver;
 
 
 public class ProductPage extends BasePage {
